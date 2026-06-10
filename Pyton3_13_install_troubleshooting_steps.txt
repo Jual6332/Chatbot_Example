@@ -66,3 +66,12 @@ Then re-run command:
 python3 -m venv venv
 
 Source: Google Gemini
+
+How to Solve "no module nammed Cython" error:
+Prerequisites: Cython compiles Python code into C/C++. It requires a working compiler and your specific Python version's header files to function correctly. Run this command to fetch the system dependencies:
+sudo apt update && sudo apt install build-essential python3-dev python3-pip -y
+
+Install command (make sure you are in venv):
+pip3 install Cython
+
+Source: Google Gemini
