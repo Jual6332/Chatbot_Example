@@ -75,3 +75,6 @@ Install command (make sure you are in venv):
 pip3 install Cython
 
 Source: Google Gemini
+
+How to solve "Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-k07kyqmd/pyyaml/" error:
+pip install --upgrade pip
