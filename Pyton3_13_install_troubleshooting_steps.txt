@@ -1,0 +1,80 @@
+The  error occurs when compiling Python from source because crucial build dependencies are missing from your system, or you lacked root permissions when copying the compiled binaries to system directories. The compilation script crashes near the end of the process—usually while compiling standard libraries like  or setting up  via . [1, 2, 3]  
+To resolve this issue, use the steps below tailored to your operating system. 
+1. Install Missing Compilation Dependencies [4]  
+Python needs underlying development libraries to build its core modules (like compression, encryption, and terminal interfaces). Run the command for your specific system: 
+
+• Ubuntu / Debian / Linux Mint: 
+sudo apt update
+sudo apt install build-essential zlib1g-dev libffi-dev libssl-dev libreadline-dev libsqlite3-dev libbz2-dev libgdbm-dev liblzma-dev tk-dev
+
+• CentOS / RHEL / Rocky Linux: 
+sudo dnf groupinstall "Development Tools"
+sudo dnf install zlib-devel libffi-devel openssl-devel readline-devel sqlite-devel bzip2-devel xz-devel tk-devel
+
+• macOS (via Homebrew): [5]  
+brew install openssl readline sqlite3 xz zlib tcl-tk
+
+2. Clear out the Broken Build Artifacts 
+Before trying to install again, you must purge the cache from the previously failed attempt: [3, 6]  
+
+Commands:
+make clean
+
+3. Reconfigure and Recompile 
+Now, re-run the configuration script and initiate the build process. Adding the  flag is recommended for better performance: [7, 8, 9]  
+
+Commands:
+./configure --enable-optimizations
+make -j $(nproc)
+
+(Note:  utilizes all available CPU cores to speed up the compilation process). [10]  
+4. Run  with Root Privileges [11]  
+Because  moves executable binaries into protected system directories like , you must prefix the command with . Missing  is one of the most common reasons the target recipe fails. [3, 12]  
+
+Commands:
+sudo make altinstall
+
+If your build still crashes, look slightly higher up in your terminal output history. Scroll past the  error line to find the exact exception causing the crash (e.g., ). Knowing that exact line will tell us exactly what package is still missing from your operating system. [2]  
+Could you paste the 5-10 lines of terminal output directly above the failure message? Sharing your operating system and the Python version you are trying to install would also help pinpoint the fix. [13]  
+
+AI responses may include mistakes.
+
+[1] https://askubuntu.com/questions/1047445/altinstall-error
+[2] https://bugs.python.org/issue36135
+[3] https://stackoverflow.com/questions/43237949/centos-7-difficulties-with-installing-python-3
+[4] https://www.geeksforgeeks.org/python/how-to-fix-error-metadata-generation-failed-in-python/
+[5] https://medium.com/@sahildrive007/installing-python-3-11-on-rhel-8-server-9fea12c2f6ee
+[6] https://community.latenode.com/t/openai-gym-installation-fails-with-wheel-build-error-on-macos/25271
+[7] https://stackoverflow.com/questions/32546506/how-to-install-python3-4-3-with-ansible
+[8] https://linuxconfig.org/how-to-install-python2-on-ubuntu-26-04
+[9] https://unix.stackexchange.com/questions/332641/how-to-install-python-3-6
+[10] https://www.linuxmaker.com/en/how-to/update-python3-to-debian-stable.html
+[11] https://discuss.python.org/t/failure-to-install-python-make-python-altinstall-for-openmandriva/106168
+[12] https://forums.linuxmint.com/viewtopic.php?t=284800
+[13] https://github.com/ModelSurge/sd-webui-comfyui/issues/149
+
+Source: Google Gemini
+
+How to solve "no module named venv" error:
+Turns out that Ubuntu distributions of Python are missing venv library. 
+
+Fix:
+sudo apt update
+sudo apt install python3-venv
+
+Then re-run command:
+python3 -m venv venv
+
+Source: Google Gemini
+
+How to Solve "no module nammed Cython" error:
+Prerequisites: Cython compiles Python code into C/C++. It requires a working compiler and your specific Python version's header files to function correctly. Run this command to fetch the system dependencies:
+sudo apt update && sudo apt install build-essential python3-dev python3-pip -y
+
+Install command (make sure you are in venv):
+pip3 install Cython
+
+Source: Google Gemini
+
+How to solve "Command "python setup.py egg_info" failed with error code 1 in /tmp/pip-build-k07kyqmd/pyyaml/" error:
+pip install --upgrade pip
