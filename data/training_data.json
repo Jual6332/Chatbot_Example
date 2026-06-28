@@ -1,0 +1,32 @@
+{
+  "conversation": [
+    {
+      "text": "Hello",
+      "in_response_to": null,
+      "persona": "user_1",
+      "conversation": "greeting_flow",
+      "tags": ["greeting"]
+    },
+    {
+      "text": "Hello! How can I help you today?",
+      "in_response_to": "Hello",
+      "persona": "bot",
+      "conversation": "greeting_flow",
+      "tags": ["greeting"]
+    },
+    {
+      "text": "What are your hours?",
+      "in_response_to": "Hello! How can I help you today?",
+      "persona": "user_1",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]
+    },
+    {
+      "text": "We are open from 9 AM to 5 PM.",
+      "in_response_to": "What are your hours?",
+      "persona": "bot",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]
+    }
+  ]
+}
