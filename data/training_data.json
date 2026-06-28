@@ -27,6 +27,46 @@
       "persona": "bot",
       "conversation": "greeting_flow",
       "tags": ["business_info"]
+    },
+    {
+      "text": "The Detroit Zoo was founded in August 1st 1928.",
+      "in_response_to": "When was the zoo founded?",
+      "persona": "bot",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]
+    },
+    {
+      "text": "The Animals University chatbot was invented in Summer 2026.",
+      "in_response_to": "When was the chatbot created?",
+      "persona": "bot",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]
+    },
+    {
+      "text": "How much does admission cost?",
+      "in_response_to": "Hello! How can I help you today?",
+      "persona": "user_1",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]},
+    {
+      "text": "How much is admission?",
+      "in_response_to": "Hello! How can I help you today?",
+      "persona": "user_1",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]},
+    {
+      "text": "What does it cost to get in?",
+      "in_response_to": "Hello! How can I help you today?",
+      "persona": "user_1",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]},
+    {
+      "text": "Buy in advance to get the best price! Calendar prices are only available online and may change daily. General Admission Gate: $27, Youth / Senior Gate: $24. All guests ages 2 and older require a ticket for entry.",
+      "in_response_to": "How much is admission to the zoo?",
+      "persona": "bot",
+      "conversation": "greeting_flow",
+      "tags": ["business_info"]
     }
   ]
 }
+

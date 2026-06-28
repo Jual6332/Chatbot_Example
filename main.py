@@ -6,7 +6,7 @@ from chatterbot.trainers import JsonFileTrainer
 def main():
 	print("Main function")
 
-	chatbot = ChatBot("Animals University")
+	chatbot = ChatBot("Detroit Zoo")
 
 	'''
 	trainer = ListTrainer(chatbot)
